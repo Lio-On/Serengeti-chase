@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Serengeti Chase - Cheetah Survival</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <canvas class="webgl"></canvas>
+
+    <!-- HUD -->
+    <div class="hud">
+      <div class="hud-top">
+        <div class="stat">
+          <div class="stat-label">Gazelles</div>
+          <div class="stat-value" id="gazelles">0 / 20</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Cubs Raised</div>
+          <div class="stat-value" id="cubs">0 / 3</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Lives</div>
+          <div class="stat-value" id="lives">3</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start Screen -->
+    <div class="screen" id="startScreen">
+      <div class="screen-content">
+        <h1>🐆 SERENGETI CHASE</h1>
+        <p class="subtitle">Survive. Hunt. Thrive.</p>
+        <div class="instructions">
+          <h3>How to Play:</h3>
+          <p>🎮 Use <strong>ARROW KEYS</strong> or <strong>WASD</strong> to move</p>
+          <p>🦌 Catch <strong>20 gazelles</strong> to raise a cub</p>
+          <p>⚠️ Avoid <strong>hyenas</strong> (brown) and <strong>lions</strong> (orange)</p>
+          <p>🏆 Raise <strong>3 cubs</strong> to become King of the Serengeti!</p>
+          <p>💚 You have <strong>3 lives</strong> per level</p>
+        </div>
+        <button class="btn-start" id="btnStart">START GAME</button>
+      </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div class="screen hidden" id="gameOverScreen">
+      <div class="screen-content">
+        <h1>🦴 GAME OVER</h1>
+        <p class="message" id="gameOverMessage">You couldn't survive the Serengeti...</p>
+        <div class="final-stats">
+          <p>Cubs Raised: <span id="finalCubs">0</span></p>
+          <p>Total Gazelles: <span id="finalGazelles">0</span></p>
+        </div>
+        <button class="btn-start" id="btnRestart">TRY AGAIN</button>
+      </div>
+    </div>
+
+    <!-- Victory Screen -->
+    <div class="screen hidden" id="victoryScreen">
+      <div class="screen-content">
+        <h1>👑 KING OF THE SERENGETI!</h1>
+        <p class="message">You've successfully raised 3 cubs!</p>
+        <div class="final-stats">
+          <p>Total Gazelles Caught: <span id="victoryGazelles">0</span></p>
+        </div>
+        <button class="btn-start" id="btnPlayAgain">PLAY AGAIN</button>
+      </div>
+    </div>
+
+    <!-- Level Complete Screen -->
+    <div class="screen hidden" id="levelCompleteScreen">
+      <div class="screen-content">
+        <h1>🐾 CUB RAISED!</h1>
+        <p class="message">You've successfully raised a cub!</p>
+        <p class="cubs-count" id="cubsProgress">Cubs: 1 / 3</p>
+        <button class="btn-start" id="btnNextLevel">NEXT LEVEL</button>
+      </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
