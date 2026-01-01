@@ -8,6 +8,7 @@ export default defineConfig(({ command }) => ({
   base: command === 'build' ? '/Serengeti-chase/' : './',
   server: {
     host: true, // accessible sur le réseau local
+    port: 3000,
     open: !('SANDBOX_URL' in process.env || 'CODESANDBOX_HOST' in process.env)
   },
   build: {
