@@ -2,10 +2,10 @@ import { defineConfig } from 'vite'
 import restart from 'vite-plugin-restart'
 import glsl from 'vite-plugin-glsl'
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   root: './',
   publicDir: './public/',
-  base: '/Serengeti-chase/',
+  base: command === 'build' ? '/Serengeti-chase/' : './',
   server: {
     host: true, // accessible sur le réseau local
     open: !('SANDBOX_URL' in process.env || 'CODESANDBOX_HOST' in process.env)
@@ -19,4 +19,4 @@ export default defineConfig({
     restart({ restart: ['public/**'] }),
     glsl()
   ]
-})
+}))
