@@ -5,7 +5,7 @@ import glsl from 'vite-plugin-glsl'
 export default defineConfig({
   root: './',
   publicDir: './public/',
-  base: './',
+  base: '/Serengeti-chase/',
   server: {
     host: true, // accessible sur le réseau local
     open: !('SANDBOX_URL' in process.env || 'CODESANDBOX_HOST' in process.env)
