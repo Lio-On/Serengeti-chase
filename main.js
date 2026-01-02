@@ -806,6 +806,7 @@ const keys = {
   right: false,
 };
 
+// Keyboard controls
 document.addEventListener('keydown', (e) => {
   if (!gameState.isPlaying) return;
 
@@ -847,6 +848,121 @@ document.addEventListener('keyup', (e) => {
     case 'd':
       keys.right = false;
       break;
+  }
+});
+
+// ==========================================
+// MOBILE TOUCH CONTROLS
+// ==========================================
+function isMobileDevice() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    || (window.innerWidth <= 768);
+}
+
+function initMobileControls() {
+  const mobileControls = document.getElementById('mobileControls');
+
+  if (isMobileDevice()) {
+    mobileControls.classList.add('visible');
+  }
+
+  // Touch control functions
+  const setKeyState = (key, state) => {
+    if (gameState.isPlaying) {
+      keys[key] = state;
+    }
+  };
+
+  // Up button
+  const btnUp = document.getElementById('btnUp');
+  btnUp.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    setKeyState('up', true);
+  });
+  btnUp.addEventListener('touchend', (e) => {
+    e.preventDefault();
+    setKeyState('up', false);
+  });
+  btnUp.addEventListener('touchcancel', (e) => {
+    e.preventDefault();
+    setKeyState('up', false);
+  });
+
+  // Down button
+  const btnDown = document.getElementById('btnDown');
+  btnDown.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    setKeyState('down', true);
+  });
+  btnDown.addEventListener('touchend', (e) => {
+    e.preventDefault();
+    setKeyState('down', false);
+  });
+  btnDown.addEventListener('touchcancel', (e) => {
+    e.preventDefault();
+    setKeyState('down', false);
+  });
+
+  // Left button
+  const btnLeft = document.getElementById('btnLeft');
+  btnLeft.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    setKeyState('left', true);
+  });
+  btnLeft.addEventListener('touchend', (e) => {
+    e.preventDefault();
+    setKeyState('left', false);
+  });
+  btnLeft.addEventListener('touchcancel', (e) => {
+    e.preventDefault();
+    setKeyState('left', false);
+  });
+
+  // Right button
+  const btnRight = document.getElementById('btnRight');
+  btnRight.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    setKeyState('right', true);
+  });
+  btnRight.addEventListener('touchend', (e) => {
+    e.preventDefault();
+    setKeyState('right', false);
+  });
+  btnRight.addEventListener('touchcancel', (e) => {
+    e.preventDefault();
+    setKeyState('right', false);
+  });
+
+  // Also support mouse events for testing on desktop
+  const buttons = [
+    { element: btnUp, key: 'up' },
+    { element: btnDown, key: 'down' },
+    { element: btnLeft, key: 'left' },
+    { element: btnRight, key: 'right' }
+  ];
+
+  buttons.forEach(({ element, key }) => {
+    element.addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      setKeyState(key, true);
+    });
+    element.addEventListener('mouseup', (e) => {
+      e.preventDefault();
+      setKeyState(key, false);
+    });
+    element.addEventListener('mouseleave', (e) => {
+      setKeyState(key, false);
+    });
+  });
+}
+
+// Show mobile controls on window resize if needed
+window.addEventListener('resize', () => {
+  const mobileControls = document.getElementById('mobileControls');
+  if (isMobileDevice()) {
+    mobileControls.classList.add('visible');
+  } else {
+    mobileControls.classList.remove('visible');
   }
 });
 
@@ -1096,6 +1212,7 @@ createPlayer();
 createGazelles();
 createEnemies();
 updateHUD();
+initMobileControls();
 
 // ==========================================
 // ANIMATION LOOP
