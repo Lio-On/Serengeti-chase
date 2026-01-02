@@ -877,13 +877,14 @@ function updatePlayer() {
   let newZ = player.z + dirZ * speed;
 
   // Improved collision - slide along obstacles instead of stopping
-  if (checkObstacleCollision(newX, newZ, 0.5)) {
+  // Using smaller collision radius (0.35) for better maneuverability
+  if (checkObstacleCollision(newX, newZ, 0.35)) {
     // Try moving only in X direction
-    if (!checkObstacleCollision(newX, player.z, 0.5)) {
+    if (!checkObstacleCollision(newX, player.z, 0.35)) {
       newZ = player.z;
     }
     // Try moving only in Z direction
-    else if (!checkObstacleCollision(player.x, newZ, 0.5)) {
+    else if (!checkObstacleCollision(player.x, newZ, 0.35)) {
       newX = player.x;
     }
     // Can't move, stay in place
