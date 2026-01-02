@@ -415,40 +415,40 @@ body {
   }
 
   .control-pad {
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
   }
 
   .control-btn {
-    width: 40px;
-    height: 40px;
+    width: 52px;
+    height: 52px;
   }
 
   .control-btn svg {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
   }
 
   .control-up {
-    left: 40px;
+    left: 54px;
   }
 
   .control-down {
-    left: 40px;
+    left: 54px;
   }
 
   .control-left {
-    top: 40px;
+    top: 54px;
   }
 
   .control-right {
-    top: 40px;
+    top: 54px;
   }
 
   .control-center {
-    width: 30px;
-    height: 30px;
-    top: 45px;
-    left: 45px;
+    width: 40px;
+    height: 40px;
+    top: 60px;
+    left: 60px;
   }
 }
