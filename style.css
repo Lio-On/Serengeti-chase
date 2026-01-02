@@ -226,18 +226,18 @@ body {
 
 .control-pad {
   position: relative;
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
 }
 
 .control-btn {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 65px;
+  height: 65px;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
   border: 3px solid rgba(255, 255, 255, 0.4);
-  border-radius: 12px;
+  border-radius: 15px;
   color: white;
   cursor: pointer;
   display: flex;
@@ -251,8 +251,8 @@ body {
 }
 
 .control-btn svg {
-  width: 32px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
   pointer-events: none;
 }
 
@@ -265,33 +265,33 @@ body {
 
 .control-up {
   top: 0;
-  left: 55px;
+  left: 67.5px;
 }
 
 .control-down {
   bottom: 0;
-  left: 55px;
+  left: 67.5px;
 }
 
 .control-left {
   left: 0;
-  top: 55px;
+  top: 67.5px;
 }
 
 .control-right {
   right: 0;
-  top: 55px;
+  top: 67.5px;
 }
 
 .control-center {
   position: absolute;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   background: rgba(0, 0, 0, 0.3);
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
-  top: 60px;
-  left: 60px;
+  top: 75px;
+  left: 75px;
   pointer-events: none;
 }
 
@@ -370,41 +370,41 @@ body {
   }
 
   .control-pad {
-    width: 140px;
-    height: 140px;
+    width: 180px;
+    height: 180px;
   }
 
   .control-btn {
-    width: 45px;
-    height: 45px;
+    width: 58px;
+    height: 58px;
   }
 
   .control-btn svg {
-    width: 28px;
-    height: 28px;
+    width: 34px;
+    height: 34px;
   }
 
   .control-up {
-    left: 47.5px;
+    left: 61px;
   }
 
   .control-down {
-    left: 47.5px;
+    left: 61px;
   }
 
   .control-left {
-    top: 47.5px;
+    top: 61px;
   }
 
   .control-right {
-    top: 47.5px;
+    top: 61px;
   }
 
   .control-center {
-    width: 35px;
-    height: 35px;
-    top: 52.5px;
-    left: 52.5px;
+    width: 45px;
+    height: 45px;
+    top: 67.5px;
+    left: 67.5px;
   }
 }
 
