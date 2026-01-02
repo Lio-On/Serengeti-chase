@@ -209,3 +209,246 @@ body {
   transform: translateY(-1px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
+
+/* Mobile Touch Controls */
+.mobile-controls {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 50;
+  display: none;
+  pointer-events: auto;
+}
+
+.mobile-controls.visible {
+  display: block;
+}
+
+.control-pad {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.control-btn {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.control-btn svg {
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+}
+
+.control-btn:active {
+  background: rgba(255, 215, 0, 0.8);
+  border-color: #ffd700;
+  transform: scale(0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.control-up {
+  top: 0;
+  left: 55px;
+}
+
+.control-down {
+  bottom: 0;
+  left: 55px;
+}
+
+.control-left {
+  left: 0;
+  top: 55px;
+}
+
+.control-right {
+  right: 0;
+  top: 55px;
+}
+
+.control-center {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  top: 60px;
+  left: 60px;
+  pointer-events: none;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .hud-top {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .stat {
+    padding: 8px 12px;
+    border-radius: 10px;
+    border-width: 2px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    margin-bottom: 3px;
+  }
+
+  .stat-value {
+    font-size: 16px;
+  }
+
+  .screen-content {
+    max-width: 90%;
+    padding: 25px 20px;
+    margin: 10px;
+  }
+
+  .screen-content h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .instructions h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .instructions p {
+    font-size: 13px;
+    margin: 8px 0;
+  }
+
+  .message {
+    font-size: 16px;
+    margin: 15px 0;
+  }
+
+  .final-stats {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .cubs-count {
+    font-size: 24px;
+    margin: 15px 0;
+  }
+
+  .btn-start {
+    font-size: 24px;
+    padding: 12px 35px;
+    margin-top: 15px;
+  }
+
+  .mobile-controls {
+    bottom: 80px;
+    right: 15px;
+  }
+
+  .control-pad {
+    width: 140px;
+    height: 140px;
+  }
+
+  .control-btn {
+    width: 45px;
+    height: 45px;
+  }
+
+  .control-btn svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .control-up {
+    left: 47.5px;
+  }
+
+  .control-down {
+    left: 47.5px;
+  }
+
+  .control-left {
+    top: 47.5px;
+  }
+
+  .control-right {
+    top: 47.5px;
+  }
+
+  .control-center {
+    width: 35px;
+    height: 35px;
+    top: 52.5px;
+    left: 52.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-controls {
+    bottom: 70px;
+    right: 10px;
+  }
+
+  .control-pad {
+    width: 120px;
+    height: 120px;
+  }
+
+  .control-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .control-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .control-up {
+    left: 40px;
+  }
+
+  .control-down {
+    left: 40px;
+  }
+
+  .control-left {
+    top: 40px;
+  }
+
+  .control-right {
+    top: 40px;
+  }
+
+  .control-center {
+    width: 30px;
+    height: 30px;
+    top: 45px;
+    left: 45px;
+  }
+}
